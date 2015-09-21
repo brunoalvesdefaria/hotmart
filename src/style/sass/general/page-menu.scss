@@ -1,0 +1,126 @@
+.page-menu {
+	width: 221px;
+	float: left;
+	.navbar {
+		background: transparent;
+		border: none;
+		font-size: 14px;
+		text-transform: uppercase;
+	}
+	.logo {
+		display: block;
+		position: relative;
+		padding: 0;
+		height: 135px;
+		line-height: 127px;
+		font-size: 29px;
+		font-weight: 600;
+		text-align: center;
+		text-decoration: none;
+		border-left: 1px solid $darker-red;
+		border-right: 1px solid $darker-red;
+		color: transparent;
+		background-color: $red;
+		overflow: hidden;
+		text-transform: none;
+		&:after {
+			display: block;
+			content: '';
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			position: absolute;
+			background: image-url('logo.png') 54px 47px no-repeat;
+		}
+	}
+	.nav,
+	.heading {
+		border-left: 1px solid $gray-e3;
+		border-right: 1px solid $gray-e3;
+	}
+	.nav {
+		li.active a {
+			color: $red;
+			&:before {
+				position: absolute;
+				display: block;
+				content: '';
+				top: 1px;
+				bottom: 0;
+				left: 0;
+				width: 6px;
+				background-color: $red;
+			}
+		}
+		li a:hover {
+			color: $dark-red;
+			&:before {
+				background-color: $dark-red;
+			}
+		}
+		a {
+			background-color: $gray-f8;
+			color: $gray-c7;
+			position: relative;
+			padding-left: 60px;
+			line-height: 22px;
+			border-bottom: 1px solid $gray-e3;
+			&:after {
+				@include glyphicon;
+				position: absolute;
+				right: 4px;
+				@include centre(y);
+				font-size: 10px;
+				content: "\e258";
+			}
+			span {
+				left: 20px;
+				top: 12px;
+				position: absolute;
+				font-size: 20px;
+			}
+		}
+	}
+	.heading {
+		position: relative;
+		background-color: $gray-f3;
+		color: $gray-ac;
+		line-height: 73px;
+		padding-left: 28px;
+		border-top: 1px solid $white;
+		border-bottom: 1px solid $gray-e3;
+		&:before {
+			position: absolute;
+			display: block;
+			content: '';
+			top: 0;
+			bottom: 1px;
+			left: 0;
+			width: 19px;
+			background-color: $gray-bd;
+		}
+	}
+	.shortcuts a {
+		border-top: 1px solid $white;
+		&:hover {
+			&:after {
+				color: $dark-red;
+				border-color: $dark-red;
+			}
+		}
+		&:after {
+			@include glyphicon;
+			position: absolute;
+			left: 21px;
+			display: table;
+			padding: 4px;
+			@include border-radius(2px);
+			border: 1px solid $gray-c7;
+			color: $red;
+			@include centre(y);
+			font-size: 10px;
+			content: "\2b";
+		}
+	}
+}

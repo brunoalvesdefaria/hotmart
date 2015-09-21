@@ -1,0 +1,62 @@
+.page-content {
+	width: 900px;
+	float: right;
+	.title {
+		position: relative;
+		margin: 44px 0 28px;
+		border: 1px solid $gray-e3;
+		padding-left: 62px;
+		span {
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 50px;
+			width: 50px;
+			line-height: 50px;
+			text-align: center;
+			font-size: 20px;
+			background-color: $red;
+			color: $white;
+			content: '\2709';
+		}
+		h1 {
+			font-size: 18px;
+			line-height: 50px;
+			margin: 0;
+		}
+	}
+	.page-controls {
+		display: table;
+		margin-right: 9px;
+		margin-left: auto;
+		.btn-group {
+			margin-left: 8px;
+		}
+		input, button.btn {
+			padding: 6px 9px;
+			border: none;
+			@include border-radius(2px);
+		}
+		button {
+			line-height: 22px;
+		}
+		input {
+			box-shadow: none;
+			background-color: $gray-f0;
+			text-align: right;
+		}
+		.search {
+			float: right;
+			width: 202px;
+		}
+		.vline {
+			height: 34px;
+			width: 1px;
+			background-color: $gray-ee;
+		}
+	}
+	.page-content-body {
+		margin-top: 22px;
+		border: 1px solid $gray-e3;
+	}
+}

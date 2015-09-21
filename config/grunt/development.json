@@ -1,0 +1,16 @@
+{
+	"copy": {
+		"js": [
+			"lib/bower/jquery/dist/jquery.js",
+			"lib/bower/bootstrap/dist/js/bootstrap.js",
+			"lib/bower/requirejs/require.js",
+			"lib/bower/underscore/underscore.js",
+			"lib/bower/backbone/backbone.js",
+			"lib/bower/dustjs-linkedin/dist/dust-full.js"
+		],
+		"css": [
+			"lib/bower/bootstrap/dist/css/bootstrap.css",
+			"lib/bower/bootstrap/dist/css/bootstrap-theme.css"
+		]
+	}
+}

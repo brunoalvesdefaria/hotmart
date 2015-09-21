@@ -1,0 +1,46 @@
+<div class="title">
+	<span class="glyphicon glyphicon-envelope shadow-dark-red"></span>
+	<h1>Mensagens</h1>
+</div>
+<div class="page-controls btn-toolbar">
+	<div class="btn-group" role="group"><div class="input-group search">
+		<input type="text" class="form-control" placeholder="pesquisar">
+		<span class="input-group-btn">
+			<button class="btn btn-primary" type="button">
+				<span class="glyphicon glyphicon-search"></span>
+			</button>
+		</span>
+	</div></div>
+	<div class="vline btn-group">
+	</div>
+	<div class="btn-group" role="group">
+		<button type="button" class="btn btn-primary">
+			<span class="glyphicon glyphicon-trash"></span>
+		</button>
+	</div>
+</div>
+<div class="page-content-body">
+
+	{#messages}
+		<div class="message clearfix">
+			<div class="check-area">
+				<input type="checkbox" />
+			</div>
+			<div class="message-area">
+				<div class="round-image">
+					<img src="/img/users/{user.id}.jpg" />
+				</div>
+				<div class="message-content">
+					<div class="heading">
+						<a href="#users/{user.id}">{user.name}</a>&#8226;<span>{date}</span>
+					</div>
+					<div class="content">{content}</div>
+				</div>
+				<a href="#" class="badge-arrow">{amount}</a>
+			</div>
+		</div>
+	{:else}
+		Nenhuma mensagem!
+	{/messages}
+
+</div>

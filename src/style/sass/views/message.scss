@@ -1,0 +1,118 @@
+$message-height: 70px;
+$message-border-radius: 5px;
+$message-color: $gray-bd;
+$message-hover-color: $red;
+
+.message {
+	position: relative;
+	height: 103px;
+	border-bottom: 1px solid $gray-e3;
+	background-color: $white;
+	&:last-child {
+		border-bottom: none;
+	}
+	.check-area {
+		width: 34px;
+		height: 100%;
+		position: relative;
+		& input {
+			@include centre;
+		}
+	}
+	&:nth-child(even) .message-area{
+		background-color: $gray-f4;
+	}
+	.message-area {
+		position: absolute;
+		top: 21px;
+		left: 34px;
+		right: 24px;
+		height: 70px;
+		background-color: $gray-fb;
+		overflow: hidden;
+		@include border-left-radius(35px);
+		@include border-right-radius($message-border-radius);
+		.round-image {
+			position: relative;
+			display: table;
+			float: left;
+			margin: 7px;
+			width: 56px;
+			height: 56px;
+			background-color: $white;
+			@include border-radius(28px);
+			overflow: hidden;
+			& img {
+				width: 100%;
+				height: auto;
+				@include centre;
+			}
+		}
+		.badge-arrow {
+			position: absolute;
+			right: 0;
+			top: 0;
+			height: $message-height;
+			line-height: $message-height;
+			padding-right: 20px;
+			font-size: 12px;
+			font-weight: 100;
+			width: 50px;
+			display: block;
+			text-align: center;
+			color: $white;
+			text-decoration: none;
+			z-index: 1;
+			&:before {
+				position: absolute;
+				display: block;
+				content: '';
+				left: 0;
+				@include centre(y);
+				width: 40px;
+				height: 30px;
+				@include border-radius(15px);
+				background-color: $message-color;
+				z-index: -2;
+			}
+			&:after {
+				@include glyphicon;
+				content: '\e258';
+				position: absolute;
+				display: block;
+				right: 0;
+				top: 0;
+				width: 36px;
+				height: $message-height;
+				line-height: $message-height;
+				@include border-radius($message-border-radius);
+				background-color: $message-color;
+				z-index: -1;
+			}
+		}
+		.message-content {
+			float: left;
+			margin: 15px 0 0 24px;
+			a {
+				margin-right: 4px;
+				text-decoration: none;
+			}
+			span {
+				margin-left: 3px;
+				color: $gray-ab;
+			}
+			.content {
+				color: $gray-ab;
+			}
+		}
+		&:hover {
+			.content {
+				color: inherit;
+			}
+			.badge-arrow:before,
+			.badge-arrow:after {
+				background-color: $message-hover-color;
+			}
+		}
+	}
+}

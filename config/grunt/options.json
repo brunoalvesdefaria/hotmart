@@ -1,0 +1,31 @@
+{
+	"bootstrap": {
+		"input": "src/style/less/bootstrap-variables.less",
+		"output": "lib/bower/bootstrap/less/variables.less"
+	},
+	"copy": {
+		"fonts": [
+			"lib/bower/bootstrap/dist/fonts/*",
+			"lib/icomoon/fonts/*"
+		],
+		"templates": "src/template/**/*"
+	},
+	"replace": {
+		"icomoon": {
+			"src": "lib/icomoon/style.css",
+			"dest": "public/css/lib/icomoon.css"
+		}
+	},
+	"sass": {
+		"httpPath": "/",
+		"sassDir": "src/style/sass",
+		"specify": [
+			"src/style/sass/base.scss"
+		],
+		"cssDir": "public/css",
+		"imagesDir": "img",
+		"javascriptsDir": "js",
+		"fontsDir": "css/fonts",
+		"require": []
+	}
+}

@@ -1,0 +1,46 @@
+{
+	"copy": {
+		"js": [
+			"lib/bower/jquery/dist/jquery.min.js",
+			"lib/bower/bootstrap/dist/js/bootstrap.min.js",
+			"lib/bower/underscore/underscore-min.js",
+			"lib/bower/backbone/backbone-min.js",
+			"lib/bower/dustjs-linkedin/dist/dust-full.min.js"
+		],
+		"css": [
+			"lib/bower/bootstrap/dist/css/bootstrap.css",
+			"lib/bower/bootstrap/dist/css/bootstrap-theme.css"
+		]
+	},
+	"concat": {
+		"css": [
+			"public/css/lib/bootstrap.css",
+			"public/css/lib/bootstrap-theme.css",
+			"public/css/lib/icomoon.css",
+			"public/css/base.css"
+		]
+	},
+	"uglify": {
+		"require": {
+			"options": {"mangle": {"except": [
+				"requirejs",
+				"require",
+				"define"
+			]}},
+			"files": {
+				"public/js/lib/require.js": ["lib/bower/requirejs/require.js"]
+			},
+			"preserveComments": "some"
+		},
+		"jsPublic": {
+			"options": {"mangle": true},
+			"files": [{
+				"expand": true,
+				"cwd": "src/js/public/",
+				"src": "**/*.js",
+				"dest": "public/js/",
+				"ext": ".js"
+			}]
+		}
+	}
+}

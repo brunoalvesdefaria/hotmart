@@ -1,0 +1,22 @@
+@import 'variables';
+@import 'mixins';
+@import 'page-menu';
+@import 'page-content';
+
+.btn {
+	background-image: none;
+}
+.input-group {
+	border: none;
+}
+
+.page-container {
+	font-family: 'Open Sans', sans-serif;
+	width: 1172px;
+	margin: 0 auto;
+	span.shadow-dark-red,
+	a.shadow-dark-red {
+		overflow: hidden;
+		@include text-3d(70, #b70000);
+	}
+}

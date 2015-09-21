@@ -1,0 +1,11 @@
+{
+	"name": "Hotmart",
+	"version": "1.0.0",
+	"dependencies": {
+		"requirejs": "2.1.20",
+		"jquery": "2.1.4",
+		"bootstrap": "3.3.5",
+		"backbone": "1.2.3",
+		"dustjs-linkedin": "2.7.2"
+	}
+}

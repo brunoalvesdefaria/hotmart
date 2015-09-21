@@ -1,0 +1,57 @@
+/*
+ * Centers an element horizontally, vertically, or both
+ */
+@mixin centre($axis: "both"){
+	position:absolute;
+	@if $axis == "y" {
+		top:50%;
+		-webkit-transform: translateY(-50%);
+		-moz-transform: translateY(-50%);
+		-ms-transform: translateY(-50%);
+		-o-transform: translateY(-50%);
+		transform: translateY(-50%);
+	}
+	@if $axis == "x" {
+		left:50%;
+		-webkit-transform: translateX(-50%);
+		-moz-transform: translateX(-50%);
+		-ms-transform: translateX(-50%);
+		-o-transform: translateX(-50%);
+		transform: translateX(-50%);
+	}
+	@if $axis == "both" {
+		top:50%;
+		left:50%;
+		-webkit-transform: translate(-50%, -50%);
+		-moz-transform: translate(-50%, -50%);
+		-ms-transform: translate(-50%, -50%);
+		-o-transform: translate(-50%, -50%);
+		transform: translate(-50%, -50%);
+	}
+}
+
+/*
+ * Creates a 3d shadow behind the text
+ */
+@mixin text-3d($height, $color) {
+	$ts: ();
+	@for $i from 1 through ($height*2) {
+		$ts: $ts, $i*0.5px $i*0.5px $color;
+	}
+	@include text-shadow($ts);
+}
+
+/*
+ * Transforms the element in a glyphicon
+ */
+@mixin glyphicon {
+	position: relative;
+	top: 1px;
+	display: inline-block;
+	font-family: 'Glyphicons Halflings';
+	font-style: normal;
+	font-weight: normal;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
