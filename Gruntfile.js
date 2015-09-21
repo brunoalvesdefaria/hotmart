@@ -50,6 +50,11 @@ module.exports = function(grunt) {
 			css: {src: production.concat.css, dest: "public/css/style.css"}
 		},
 
+		rename: {
+			underscore: {src: 'public/js/lib/underscore-min.js', dest: 'public/js/lib/underscore.js'},
+			backbone: {src: 'public/js/lib/backbone-min.js', dest: 'public/js/lib/backbone.js'}
+		},
+
 		compass: {
 			watch: {options: optionsExtend(options.sass, {
 				watch: true
@@ -88,6 +93,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-text-replace');
+	grunt.loadNpmTasks('grunt-rename');
 
 	// Replace Bootstrap Variables
 	grunt.registerTask(
@@ -147,7 +153,8 @@ module.exports = function(grunt) {
 			'compass:prod',
 			'uglify',
 			'cssmin',
-			'concat'
+			'concat',
+			'rename'
 		]
 	);
 
