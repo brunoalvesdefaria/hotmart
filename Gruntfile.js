@@ -101,19 +101,20 @@ module.exports = function(grunt) {
 		function() {
 			var newFile = 'src/style/less/bootstrap-variables.less';
 			var newVars = grunt.file.read(newFile);
-			var variables = newVars.match(/\@.+\:.+\;\n/g);
+			var variables = newVars.match(/\@.+\:.+\;/g);
+			if(!variables) return;
 			var varsObj = {};
 			for(var i=0; i<variables.length; i++) {
-				var variable = variables[i].replace(';\n', '').split(': ');
+				var variable = variables[i].replace(';', '').split(': ');
 				varsObj[variable[0]] = variable[1];
 			}
 
 			var originalFile = 'lib/bower/bootstrap/less/variables.less';
 			var originalVars = grunt.file.read(originalFile);
 			for(var i in varsObj) {
-				var regex = new RegExp(i + '\\:.+\n');
+				var regex = new RegExp(i + '\\:.+\;');
 				var variable = originalVars.match(regex)[0];
-				originalVars = originalVars.replace(variable, i + ': ' + varsObj[i] + ';\n');
+				originalVars = originalVars.replace(variable, i + ': ' + varsObj[i] + ';');
 			}
 
 			grunt.file.write(originalFile, originalVars);

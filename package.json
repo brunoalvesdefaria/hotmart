@@ -6,7 +6,7 @@
     "express": "~4.0.0"
   },
   "scripts": {
-    "preinstall": "npm install -g bower && npm install grunt-cli -g && bower install",
+    "preinstall": "npm install -g bower && npm install -g grunt-cli && bower install",
     "postinstall": "grunt bootstrap && cd ./lib/bower/bootstrap/ && npm install && grunt dist && cd ../../../ && grunt buildDev && node app.js"
   },
   "devDependencies": {
